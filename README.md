@@ -23,9 +23,9 @@ Northwestern University M.S. in Data Science (Data Engineering specialization): 
 - **ANOVA and designed experiments:** one-way ANOVA with Bartlett homogeneity check, F critical-region plots, Tukey HSD; randomized complete block design (RCBD); two-way ANOVA with interaction; residual diagnostics (histogram, QQ, fitted vs. residual ggplot) (`One-Way Analysis of Variance and Correlation.R`)
 - **Multiple linear regression:** EDA with boxplots and ggplot2; factor coding for ordinal predictors; `lm()` model building and simplification; R-squared and coefficient inference; residual normality QQ/histogram; leverage of omitted-variable bias illustrated via naive t-test vs. regression (`Multiple Linear Regression .R`)
 
-**Course syllabus topics not clearly represented in committed scripts:** explicit Pearson correlation analysis (filename references correlation but no `cor()` usage found); chi-square tests of independence; bootstrapping [VERIFY whether covered in uncommitted coursework; README mentions bootstrapping]
+**Course syllabus topics not clearly represented in committed scripts:** explicit Pearson correlation analysis (filename references correlation but no `cor()` usage found); chi-square tests of independence; bootstrapping
 
-**Data dependencies:** several scripts read CSVs from external paths (e.g., `c:/Rdata/homes.csv`, `operator.csv`, `tumor.csv`) not bundled in this repository [VERIFY local data availability before running]
+**Data dependencies:** several scripts read CSVs from external paths (e.g., `c:/Rdata/homes.csv`, `operator.csv`, `tumor.csv`) not bundled in this repository
 
 **Out of scope for this repo:** Python-based probability/calculus foundations (see **Applied-Math-through-Python**); prescriptive LP/simulation (see **Decision-Analytics**); production ML pipelines (see **Machine-Learning**, **Analytics-Applications-Engineering**).
 
