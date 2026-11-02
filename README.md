@@ -11,7 +11,25 @@ Northwestern University M.S. in Data Science (Data Engineering specialization): 
 
 ---
 
-## 2. Concepts and Methods
+## 2. Featured Project: COVID-19 Incidence and Mortality Analysis (ECDC, 2020)
+
+A statistical analysis in R (dplyr, ggplot2, forecast) of the European Centre for Disease Prevention and Control's 2020 COVID-19 records, covering daily cases, deaths, and cumulative totals by country.
+
+**Descriptive analysis:** Daily incidence and fatality rates were computed globally and by country, and quartile-based summaries showed wide variability across countries and over time.
+
+**Inferential analysis:** Welch's t-tests found statistically significant differences between the United States and Canada in both incidence and fatality rates. A multiple linear regression of deaths on cases, population, and country-level variables showed a moderate positive relationship, useful for explaining the drivers of mortality but not strong enough on its own for reliable prediction.
+
+**Forecasting:** ARIMA models projected gradual increases in cases and deaths, with wide prediction intervals reflecting how quickly the pandemic was changing.
+
+**Trends:** Monthly visualizations showed deaths peaking in spring 2020 and cases peaking in the fall.
+
+**Why it matters:** Comparing country-level outcomes and forecasting disease trends gives public health agencies and healthcare organizations a basis for resource allocation, operational planning, and risk mitigation. Adding real-time data and broader predictors would be the next step toward more accurate forecasts.
+
+**About this repository:** The scripts here cover the course's core statistical methods. The ECDC COVID-19 analysis was completed separately and is not included.
+
+---
+
+## 3. Concepts and Methods
 
 - **Descriptive statistics and EDA:** mean, trimmed mean, median, mode; quartiles; stem-and-leaf, boxplots, histograms with custom bins; weighted statistics and dispersion (`Measures of Central Tendency.R`)
 - **Data visualization:** pie charts, bar plots, stacked displays; scatterplots; grouped summaries with `tapply`; contingency tables and marginal/row/column proportions on melanoma patient data (`Data Visualizations.R`)
@@ -27,7 +45,7 @@ Northwestern University M.S. in Data Science (Data Engineering specialization): 
 
 ---
 
-## 3. Stack
+## 4. Stack
 
 | Layer | Tools |
 |-------|-------|
@@ -41,7 +59,7 @@ Northwestern University M.S. in Data Science (Data Engineering specialization): 
 
 ---
 
-## 4. Structure
+## 5. Structure
 
 ```
 Statistics/
