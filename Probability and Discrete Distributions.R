@@ -1,3 +1,7 @@
+# Data directory: set the DATA_DIR environment variable, or place the CSV files
+# in a "data" folder next to this script.
+data_dir <- Sys.getenv("DATA_DIR", "data")
+
 # Week 3 Demonstration Code Predict 401  
 
 #----------------------------------------------------------------------------
@@ -37,7 +41,7 @@ reduced.number.combinations/total.number.combinations
 #-------------------------------------------------------------------------------
 # The following examples use the Hospital.csv data set.
 
-hospital <- read.csv(file.path("c:/RBlack/","Hospital.csv"),sep=",")
+hospital <- read.csv(file.path(data_dir, "Hospital.csv"),sep=",")
 str(hospital)
 
 # To generate a table with margins, it is necessary to convert the variables to factors.
