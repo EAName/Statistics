@@ -1,7 +1,3 @@
-# Data directory: set the DATA_DIR environment variable, or place the CSV files
-# in a "data" folder next to this script.
-data_dir <- Sys.getenv("DATA_DIR", "data")
-
 # Data Analysis Dealing with Multiple Linear Regression
 
 # homes.csv is comprised of data from home sales.  It consists of 32 sales for
@@ -17,7 +13,7 @@ data_dir <- Sys.getenv("DATA_DIR", "data")
 require(moments)
 require(ggplot2)
 
-prices <- read.csv(file.path(data_dir, "homes.csv"),sep=",")
+prices <- read.csv(file.path("c:/Rdata/","homes.csv"),sep=",")
 str(prices)
 summary(prices)
 

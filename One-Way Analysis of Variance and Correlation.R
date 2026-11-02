@@ -1,7 +1,3 @@
-# Data directory: set the DATA_DIR environment variable, or place the CSV files
-# in a "data" folder next to this script.
-data_dir <- Sys.getenv("DATA_DIR", "data")
-
 #----------------------------------------------------------------------------
 #---------------------------------------------------------------------------- 
 # This program will address problems taken from Business Statistics Chapter 11.
@@ -12,7 +8,7 @@ data_dir <- Sys.getenv("DATA_DIR", "data")
 
 # The data have been converted to a comma delimited file to be read into R.
 
-machine <- read.csv(file.path(data_dir, "operator.csv"), sep=",")
+machine <- read.csv(file.path("c:/Rdata/", "operator.csv"), sep=",")
 str(machine)
 
 # It is apparent the operator variable has to be converted to a factor since
@@ -75,7 +71,7 @@ qqline(res$residuals, col = "green")
 # in tire wear as a function of speed.  A RCBD is used to remove (account) for 
 # differences caused by suppliers.  These differences are not of interest.
 
-wear <- read.csv(file.path(data_dir, "supplier_rcbd.csv"), sep=",")
+wear <- read.csv(file.path("c:/Rdata/", "supplier_rcbd.csv"), sep=",")
 str(wear)
 wear$supplier <- factor(wear$supplier)
 wear$speed <- factor(wear$speed)
@@ -118,7 +114,7 @@ plot(intervals)
 # potential interaction.  It may be possible the machines are not performing
 # consistently across the shifts.  
 
-data <- read.csv(file.path(data_dir, "pipe.csv"), sep=",")
+data <- read.csv(file.path("c:/Rdata/", "pipe.csv"), sep=",")
 str(data)
 machine <- factor(data$machine)
 shift <- factor(data$shift)

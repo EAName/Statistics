@@ -1,11 +1,7 @@
-# Data directory: set the DATA_DIR environment variable, or place the CSV files
-# in a "data" folder next to this script.
-data_dir <- Sys.getenv("DATA_DIR", "data")
-
 # This program will demonstrate various data displays using RStudio and base R.
 #-------------------------------------------------------------------------------
 
-tumor <- read.csv(file.path(data_dir, "tumor.csv"), sep=",")
+tumor <- read.csv(file.path("file_path", "tumor.csv"), sep=",")
 
 # The tumor data are from 205 patients in Denmark with malignant melanoma. 
 # The data frame has 205 rows and 5 variables. The variables are:
