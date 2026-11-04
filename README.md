@@ -25,7 +25,17 @@ A statistical analysis in R (dplyr, ggplot2, forecast) of the European Centre fo
 
 **Why it matters:** Comparing country-level outcomes and forecasting disease trends gives public health agencies and healthcare organizations a basis for resource allocation, operational planning, and risk mitigation. Adding real-time data and broader predictors would be the next step toward more accurate forecasts.
 
-**About this repository:** The scripts here cover the course's core statistical methods. The ECDC COVID-19 analysis was completed separately and is not included.
+**About this repository:** The scripts here cover the course's core statistical methods.
+
+---
+
+## R Markdown analyses
+
+- `covid-19-analysis/`: country-level analysis and forecasting of ECDC COVID-19 case and death data (R Markdown and data).
+- `assignments/r-assignment-1/`: vectors, functions and probability distributions in R.
+- `assignments/r-assignment-2/`: probability, confidence intervals, hypothesis tests and chi-square analysis.
+- `assignments/data-analysis-1-abalone-eda/`: exploratory data analysis of the abalone dataset.
+- `assignments/data-analysis-2-abalone-harvest/`: ANOVA, regression and an ROC-based harvest cutoff on the abalone dataset.
 
 ---
 
