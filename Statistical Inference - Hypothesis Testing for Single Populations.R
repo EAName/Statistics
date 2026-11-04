@@ -44,7 +44,8 @@ critical.value*(30/sqrt(32))+141
 
 # Continue the example assuming the population standard deviation is not
 # known.  This requires use of the t-test.  The degrees of freedom for the test
-# are 31.  However, the standard deviation is divided by the sample size.
+# are 31.  However, the standard deviation is divided by the square root of the
+# sample size.
 
 t <- (mean(cost.data)-141)/(sd(cost.data)/(sqrt(32)))
 t
@@ -143,7 +144,7 @@ pchisq(chi, 31, lower.tail = TRUE)
 # a sample mean fill value.  For this purpose define a function to be used later.
 
 n <- 60
-alpha <- 0.01
+alpha <- 0.05
 sigma <- 0.1
 nominal <- 12.0
 
@@ -166,7 +167,8 @@ alternative <- 11.96
 zvalue <- (value-alternative)*(sqrt(n)/sigma)
 zvalue
 
-# If the sample generates a mean fill volume greater than zvalue, the null
+# If the sample generates a mean fill volume greater than value (a z score above
+# zvalue under the alternative), the null
 # hypothesis will not be rejected.  For this problem, this corresponds to finding
 # the tail area to the right of the z value determined above.  
 

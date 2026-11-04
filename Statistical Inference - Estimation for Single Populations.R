@@ -129,8 +129,12 @@ result*result
 result <- ((qnorm(0.995, mean = 0, sd = 1, lower.tail = TRUE))^2)*0.5*0.5/0.05^2
 signif(result, digits = 4)
 
+# A sample size must be a whole number, and it is always rounded up so the
+# margin of error is no larger than 0.05.
 
-# The answer differs slightly since R uses more digits in the calculation.
+ceiling(result)
+
+# The unrounded value differs slightly since R uses more digits in the calculation.
 
 #-------------------------------------------------------------------------------
 
