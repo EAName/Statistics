@@ -79,7 +79,8 @@ mcr[1,1]/mcr[5,1]
 # Note that a conditional probability is a ratio of a single cell total (which is
 # the intersection of two events) divided by a marginal total.  
 
-# Extra problem:  Probability NG_NP but not Regions NE or MW?
+# Extra problem:  Conditional probability not in Regions NE or MW if NG_NP?
+# (For the joint probability NG_NP and not NE or MW, divide by mcr[5,8] instead.)
 
 (mcr[2,8]-mcr[2,2]-mcr[2,3])/mcr[2,8]
 
