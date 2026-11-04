@@ -32,10 +32,10 @@ A statistical analysis in R (dplyr, ggplot2, forecast) of the European Centre fo
 ## R Markdown analyses
 
 - `covid-19-analysis/`: country-level analysis and forecasting of ECDC COVID-19 case and death data (R Markdown and data).
-- `assignments/r-assignment-1/`: vectors, functions and probability distributions in R.
-- `assignments/r-assignment-2/`: probability, confidence intervals, hypothesis tests and chi-square analysis.
-- `assignments/data-analysis-1-abalone-eda/`: exploratory data analysis of the abalone dataset.
-- `assignments/data-analysis-2-abalone-harvest/`: ANOVA, regression and an ROC-based harvest cutoff on the abalone dataset.
+- `analyses/r-vectors-functions-distributions/`: vectors, functions and probability distributions in R.
+- `analyses/r-probability-inference-chisq/`: probability, confidence intervals, hypothesis tests and chi-square analysis.
+- `analyses/abalone-eda/`: exploratory data analysis of the abalone dataset.
+- `analyses/abalone-anova-regression-harvest/`: ANOVA, regression and an ROC-based harvest cutoff on the abalone dataset.
 
 ---
 

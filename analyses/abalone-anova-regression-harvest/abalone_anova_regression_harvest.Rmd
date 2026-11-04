@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE)
 
 ```{r analysis_setup1, message = FALSE, warning = FALSE}
 
-# Perform the following steps to start the assignment.
+# Perform the following steps to start the analysis.
  
 # 1) Load/attach the following packages via library():  flux, ggplot2, gridExtra, moments, rockchalk, car.
 # NOTE:  packages must be installed via install.packages() before they can be loaded.
@@ -31,7 +31,7 @@ library(knitr)
 library(rockchalk)
 library(tidyverse)
 
-# 2) Use the "mydata.csv" file from Assignment #1 or use the file posted on the course site.  Reading
+# 2) Use the "mydata.csv" file from the abalone EDA.  Reading
 # the files into R will require sep = "" or sep = " " to format data properly.  Use str() to check file
 # structure.
 
@@ -263,9 +263,9 @@ qchisq(.95,4)
 
 Harvest Strategy:
 
-There is a tradeoff faced in managing abalone harvest. The infant population must be protected since it represents future harvests. On the other hand, the harvest should be designed to be efficient with a yield to justify the effort. This assignment will use VOLUME to form binary decision rules to guide harvesting. If VOLUME is below a "cutoff" (i.e. a specified volume), that individual will not be harvested. If above, it will be harvested. Different rules are possible.The Management needs to make a decision to implement 1 rule that meets the business goal.
+There is a tradeoff faced in managing abalone harvest. The infant population must be protected since it represents future harvests. On the other hand, the harvest should be designed to be efficient with a yield to justify the effort. This analysis uses VOLUME to form binary decision rules to guide harvesting. If VOLUME is below a "cutoff" (i.e. a specified volume), that individual will not be harvested. If above, it will be harvested. Different rules are possible.The Management needs to make a decision to implement 1 rule that meets the business goal.
 
-The next steps in the assignment will require consideration of the proportions of infants and adults harvested at different cutoffs. For this, similar "for-loops" will be used to compute the harvest proportions. These loops must use the same values for the constants min.v and delta and use the same statement "for(k in 1:10000)."  Otherwise, the resulting infant and adult proportions cannot be directly compared and plotted as requested. Note the example code supplied below.
+The next steps require consideration of the proportions of infants and adults harvested at different cutoffs. For this, similar "for-loops" will be used to compute the harvest proportions. These loops must use the same values for the constants min.v and delta and use the same statement "for(k in 1:10000)."  Otherwise, the resulting infant and adult proportions cannot be directly compared and plotted as requested. Note the example code supplied below.
 
 -----
 
@@ -527,7 +527,7 @@ rownames(table) <- c("Protect All Infants", "Median Infants", "Median Adults", "
 table 
 ```
  	
-**Essay Question: Based on the ROC curve, it is evident a wide range of possible "cutoffs" exist. Compare and discuss the five cutoffs determined in this assignment.**   
+**Essay Question: Based on the ROC curve, it is evident a wide range of possible "cutoffs" exist. Compare and discuss the five cutoffs determined in this analysis.**   
 
 ***Answer: (The five cutoffs represent characteristics of a given harvest of abalones. The protect all infants cutoff allows us to harvest the highest possible value of adults while proecting infant abalones. The median infants and median adults cutoffs allow us to obtain approximately a 50% harvest of both infants and adults. The Max Difference cutoff allows us to evaluate the maximum difference in the proportion of adults to infants versus the value of volume. The Zero A1 Infants cutoff serves as a baseline comparison for other cutoffs.)***
 
