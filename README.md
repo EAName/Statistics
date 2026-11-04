@@ -27,14 +27,13 @@ A statistical analysis in R (dplyr, ggplot2, forecast) of the European Centre fo
 
 **About this repository:** The scripts here cover the course's core statistical methods.
 
-The weekly R scripts at the top level are course demonstration code from MSDS 401, provided by the instructor; they are not original work.
-
 ---
 
-## Original work
+## R Markdown analyses
 
-- `covid-19-analysis/`: the ECDC COVID-19 take-home final exam (R Markdown source, the PDF as submitted, and the ECDC data), with a note on known limitations.
-- `assignments/r-assignment-1/` and `assignments/r-assignment-2/`: graded R programming assignments on vectors, functions, distributions, hypothesis tests and chi-square analysis.
+- `covid-19-analysis/`: country-level analysis and forecasting of ECDC COVID-19 case and death data (R Markdown and data).
+- `assignments/r-assignment-1/`: vectors, functions and probability distributions in R.
+- `assignments/r-assignment-2/`: probability, confidence intervals, hypothesis tests and chi-square analysis.
 - `assignments/data-analysis-1-abalone-eda/`: exploratory data analysis of the abalone dataset.
 - `assignments/data-analysis-2-abalone-harvest/`: ANOVA, regression and an ROC-based harvest cutoff on the abalone dataset.
 

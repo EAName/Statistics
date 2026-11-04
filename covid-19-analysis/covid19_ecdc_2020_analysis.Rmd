@@ -1,5 +1,5 @@
 ---
-title: "Take Home Final Exam - COVID-19"
+title: "COVID-19 Analysis of ECDC 2020 Data"
 author: "Edwin Salguero"
 output:
   pdf_document: default

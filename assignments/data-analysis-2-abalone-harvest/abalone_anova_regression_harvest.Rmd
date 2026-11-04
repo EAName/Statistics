@@ -1,5 +1,5 @@
 ---
-title: "Data Analysis Assignment #2 (75 points total)"
+title: "Abalone ANOVA, Regression and Harvest Cutoff"
 author: "Salguero, Edwin"
 output:
   html_document: default
@@ -11,7 +11,6 @@ knitr::opts_chunk$set(echo = FALSE, eval = TRUE)
 
 ```
 
-**Revision note (2026):** This is the submitted report with code errors corrected for the public repository, then re-rendered. Two answers stated the hypothesis-test logic backwards: Bartlett's test for L_RATIO (p = 0.53) fails to reject equal variances, and Tukey's M-F comparison (p = 0.94) fails to reject equal means. The conclusions were right but the reasoning said "reject". (6)(b) counted TYPE == "INFANT", a level that does not exist, so it returned 0 regardless of the cutoff. (6)(d) drew 20,000 stray text labels at x of about 57. (7)(c) plotted the smoothed difference against its index (1 to 10,000) instead of volume. (9)(a) placed points with exact equality on the volume grid, which never matched, so none of the cutoff points appeared on the ROC curve. The scatterplot legends listed CLASS and TYPE in order of first appearance (A1, A2, A5, A3, A4) while the point colors follow factor levels, so A3, A4 and A5 were mislabeled; the legends now use the factor levels.
 
 -----
 
@@ -44,9 +43,9 @@ str(mydata)
 
 ```
 
-### Test Items starts from here - There are 10 sections - total of 75 points ##############
+### Test Items starts from here - There are 10 sections ##############
 
-***#### Section 1: (5 points) ####***
+***#### Section 1: ####***
 
 (1)(a) Form a histogram and QQ plot using RATIO. Calculate skewness and kurtosis using 'rockchalk.' Be aware that with 'rockchalk', the kurtosis value has 3.0 subtracted from it which differs from the 'moments' package. 
 
@@ -115,7 +114,7 @@ print(list('ratio:', x, 'log ratio:', y))
 ***Answer: (L_Ratio exhibits better conformance to a normal distribution with homogenous variances across age classes.The QQ plot displays a deviation from the normal with skewness and kurtosis supporting this assessment. In log10 form, skewness and kurtosis approach a normal distribution. Bartlett's test rejects equal variances for RATIO (p = 0.0003) but not for L_RATIO (p = 0.53), so L_RATIO is consistent with homogeneous variances across classes)***
 
 
-***#### Section 2 (10 points) ####***
+***#### Section 2 ####***
 
 (2)(a) Perform an analysis of variance with *aov()* on L_RATIO using CLASS and SEX as the independent variables (Kabacoff chapter 9, p. 212-229). Assume equal variances. Perform two analyses. First, fit a model with the interaction term CLASS:SEX. Then, fit a model without CLASS:SEX. Use *summary()* to obtain the analysis of variance tables (Kabacoff chapter 9, p. 227).
 
@@ -141,7 +140,7 @@ TukeyHSD(aov(L_RATIO ~ CLASS + SEX, data = mydata))
 ***Answer: (All coefficients are significant with the exception of the coefficient between A2 and A1. The M-F comparison is not significant (p = 0.94), so we fail to reject equal means for males and females and can combine them into an adult group)***
 
 
-***####  Section 3: (10 points) ####***
+***####  Section 3: ####***
 
 (3)(a1) Here, we will combine "M" and "F" into a new level, "ADULT". The code for doing this is given to you. For (3)(a1), all you need to do is execute the code as given.
 
@@ -193,7 +192,7 @@ legend(0.5,2.25,levels(mydata$TYPE),col=1:nlevels(mydata$TYPE), pch=1, bty="n", 
 ***Answer: (The log transformation allows for trends and patterns to be more readily identified. The data displays in a more linear manner. Class and type are able to be identified as volume increases more easily than without the transformation. Adults have higher volumes than infants.)***
 
 
-***####   Section 4: (5 points) ####***
+***####   Section 4: ####***
 
 (4)(a1) Since abalone growth slows after class A3, infants in classes A4 and A5 are considered mature and candidates for harvest. You are given code in (4)(a1) to reclassify the infants in classes A4 and A5 as ADULTS. 
 
@@ -228,7 +227,7 @@ The next two analysis steps involve an analysis of the residuals resulting from 
 
 -----
 
-***#### Section 5: (5 points) ####***
+***#### Section 5: ####***
 
 (5)(a) If "model" is the regression object, use model$residuals and construct a histogram and QQ plot. Compute the skewness and kurtosis. Be aware that with 'rockchalk,' the kurtosis value has 3.0 subtracted from it which differs from the 'moments' package. 
 
@@ -270,7 +269,7 @@ The next steps in the assignment will require consideration of the proportions o
 
 -----
 
-***#### Section 6: (5 points) ####***
+***#### Section 6: ####***
 
 (6)(a) A series of volumes covering the range from minimum to maximum abalone volume will be used in a "for loop" to determine how the harvest proportions change as the "cutoff" changes. Code for doing this is provided.
 
@@ -386,7 +385,7 @@ This part will address the determination of a cutoff volume.value corresponding 
 
 -----
 
-***#### Section 7: (10 points)  ####***
+***#### Section 7:  ####***
 
 (7)(a) Evaluate a plot of the difference ((1 - prop.adults) - (1 - prop.infants)) versus volume.value. Compare to the 50% "split" points determined in (6)(a). There is considerable variability present in the peak area of this plot. The observed "peak" difference may not be the best representation of the data. One solution is to smooth the data to determine a more representative estimate of the maximum difference.
 
@@ -443,7 +442,7 @@ There are alternative ways to determine cutoffs. Two such cutoffs are described 
 
 -----
 
-***####  Section 8: (10 points)  ####***
+***####  Section 8:  ####***
 
 (8)(a) Harvesting of infants in CLASS "A1" must be minimized. The smallest volume.value cutoff that produces a zero harvest of infants from CLASS "A1" may be used as a baseline for comparison with larger cutoffs. Any smaller cutoff would result in harvesting infants from CLASS "A1."  
 
@@ -483,7 +482,7 @@ text(206.8, 0.5, 'Zero A 1 : 206.8', pos = 4, cex = 0.75)
 ```
 
 
-***#### Section 9: (5 points) ####***
+***#### Section 9: ####***
 
 (9)(a) Construct an ROC curve by plotting (1 - prop.adults) versus (1 - prop.infants). Each point which appears corresponds to a particular volume.value. Show the location of the cutoffs determined in (6), (7) and (8) on this plot and label each. 
 
@@ -511,7 +510,7 @@ auc(ratioharvestinfants, ratioharvestadults)
 ```
 
 
-***#### Section 10: (10 points) ####***
+***#### Section 10: ####***
 
 (10)(a) Prepare a table showing each cutoff along with the following:
  	1) true positive rate (1-prop.adults,
