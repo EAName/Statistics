@@ -23,7 +23,7 @@ The following code chunk will:
 (c) return the structure of that data frame, and
 (d) calculate new variables, VOLUME and RATIO.
 
-Do not include package installation code in this document. Packages should be installed via the Console or 'Packages' tab. You will also need to download the abalones.csv from the course site to a known location on your machine. Unless a *file.path()* is specified, R will look to directory where this .Rmd is stored when knitting.
+Do not include package installation code in this document. Packages should be installed via the Console or 'Packages' tab. The abalones.csv file is in this folder. Unless a *file.path()* is specified, R will look to directory where this .Rmd is stored when knitting.
 
 ```{r analysis_setup1, message = FALSE, warning = FALSE}
 
